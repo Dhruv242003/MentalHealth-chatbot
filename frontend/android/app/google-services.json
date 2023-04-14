@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "734367300995",
+    "project_id": "quark-chatbot",
+    "storage_bucket": "quark-chatbot.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:734367300995:android:984530a805eacbdfcccab6",
+        "android_client_info": {
+          "package_name": "com.example.frontend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "734367300995-pjnaskfg25kii7cm1d54jf9otrkkog5c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_GSWMV2MdGAMJzUnsUzXVGtJHdM9WPm4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "734367300995-pjnaskfg25kii7cm1d54jf9otrkkog5c.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "734367300995-tje40ld77rcohekj5un6hf0fmcbh170n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.frontend"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
