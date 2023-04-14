@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:frontend/firebase_options.dart';
 import 'package:frontend/screens/auth/login_page.dart';
 import 'package:frontend/screens/auth/signup_page.dart';
+import 'package:frontend/screens/home/chat_screen.dart';
 import 'package:frontend/screens/home/home_screen.dart';
 import 'package:frontend/services/firebase_auth_methods.dart';
 import 'package:provider/provider.dart';
@@ -43,7 +44,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 class AuthWrapper extends StatelessWidget {
   const AuthWrapper({Key? key}) : super(key: key);
 
@@ -52,8 +52,8 @@ class AuthWrapper extends StatelessWidget {
     final firebaseUser = context.watch<User?>();
 
     if (firebaseUser != null) {
-      return const HomeScreen();
+      return const ChatScreen();
     }
-    return const SignUpScreen();
+    return const LoginScreen();
   }
 }
