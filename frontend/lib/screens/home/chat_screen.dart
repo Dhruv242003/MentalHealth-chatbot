@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
+import 'package:frontend/services/chat_backup_services.dart';
 import 'package:frontend/services/firebase_auth_methods.dart';
 import 'package:provider/provider.dart';
 
@@ -25,9 +26,11 @@ class _ChatScreenState extends State<ChatScreen> {
         centerTitle: true,
         title: Text('CHATBOT'),
         actions: [
-          IconButton(onPressed: (){
-            context.read<FirebaseAuthMethods>().signOut(context);
-          }, icon: const Icon(Icons.logout))
+          IconButton(
+              onPressed: () {
+                context.read<FirebaseAuthMethods>().signOut(context);
+              },
+              icon: const Icon(Icons.logout))
         ],
       ),
       body: Chat(
@@ -45,6 +48,19 @@ class _ChatScreenState extends State<ChatScreen> {
 
     _addMessage(textMessage);
     _receiveMessage(message);
+    // getResponse(message.text);
+    createPost();
+  }
+
+  void getResponse(String message) async {
+    String answer = await getChatbotResponse(message);
+    final textMessage = types.TextMessage(
+      author: _user2,
+      createdAt: DateTime.now().millisecondsSinceEpoch,
+      id: _user.id,
+      text: answer,
+    );
+    _addMessage(textMessage);
   }
 
   void _receiveMessage(types.PartialText message) {
